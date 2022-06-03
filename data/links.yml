@@ -1,0 +1,27 @@
+---
+- group: Sub Domain
+  items:
+    - title: www.devju.ga
+      url: https://www.devju.ga
+      icon: card-icon/home.svg
+      desc: Home
+
+    - title: blog.devju.ga
+      url: https://blog.devju.ga
+      icon: card-icon/hugo.svg
+      desc: Blog
+    
+    - title: cloud.devju.ga
+      url: https://cloud.devju.ga
+      icon: card-icon/cells.png
+      desc: Pydio Cells
+
+    - title: test.devju.ga
+      url: https://test.devju.ga
+      icon: card-icon/test.svg
+      desc: Test Domain
+  
+    - title: mon.devju.ga
+      url: https://mon.devju.ga
+      icon: card-icon/grafana.svg
+      desc: Grafana

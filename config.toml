@@ -1,4 +1,17 @@
-baseURL = 'http://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
+baseURL = 'http://devju.ga/'
+languageCode = 'ko-KR'
+title = 'devju'
 theme = 'bootstrap-bp-hugo-startpage'
+
+[params]
+  description = "main devju.ga"
+  startPageColumns = false
+  welcomeText = "안녕하세요 :)"
+
+[[params.searchEngines]]
+  name = "Google"
+  activated = false
+  url = "https://www.google.com/search"
+
+[Author]  
+  name = "ju"

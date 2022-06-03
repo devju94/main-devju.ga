@@ -1,0 +1,52 @@
+{{ define "main" }}
+
+<h1 class="welcomeText">{{ .Site.Params.welcomeText }}</h1>
+
+{{ if .Site.Params.searchEngines }}
+  {{ range .Site.Params.searchEngines }}
+    {{ if .activated }}
+      <form id="search-form-{{ .name }}" class="mb-3" action="{{ .url }}" method="get">
+        <input id="search-bar-{{ .name }}" class="form-control" type="text" autofocus type="text" placeholder="Search {{ .name }}" name="{{ cond (isset . "searchkey") .searchkey "q" }}" alt="Search {{ .name }}" onkeydown="if(event.keyCode === 13) { this.form.submit(); return false; }">
+      </form>
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ if .Site.Params.startPageColumns }}
+  <div id="groupList" class="card-deck mt-3">
+    {{ range .Site.Data.links }}
+      <div id="groupListEntry" class="card">
+        <div class="card-body">
+          <h5 class="card-title groupTitle">{{ .group }}</h5>                        
+          <ul class="list-group list-group-flush groupListList">
+            {{ range .items }}
+              <li class="list-group-item groupListListItem"><a href="{{ .url }}" target="_blank" class="groupLink"><i class="{{ .icon }}"></i>&nbsp;<span class="groupText">{{ .title | safeHTML }}</span></a></li>
+            {{ end }}
+          </ul>
+        </div>
+      </div>
+    {{ end }}
+  </div>
+{{ else }}
+  <div id="iconList" class="card-columns mt-3">
+    {{ range .Site.Data.links }}
+      {{ range .items }}
+        <div id="iconListEntry" class="card">
+          <div class="card-body cursor-pointer" onclick="window.open('{{ .url }}');return false;">
+            <p class="card-text">
+              <a href="{{ .url }}" target="_blank" class="iconLink"><img class="card-icon" src="{{ .icon | safeHTML }}" /></a>
+            </p>
+            <p class="card-title">{{ .title }}</p>
+            <p class="card-desc">{{ .desc }}</p>
+
+          </div>
+        </div>
+      {{ end }}
+      {{ end }}
+    </div>
+    <div class="footer">
+      <p>전 도메인에 Cloudflare Proxy, fail2ban 등 보안 정책이 적용이 되어있습니다.<br>인가되지 않은 접근 시도가 여러 번 감지되면 시스템에 의해 차단당할 수 있습니다.</p>
+      <p>Copyright 2022. devju All rights reserved.</p>
+    </div>
+  {{ end }}
+{{ end }}
