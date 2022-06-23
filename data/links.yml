@@ -16,12 +16,17 @@
       icon: card-icon/cells.png
       desc: Pydio Cells
 
-    - title: test.devju.ga
-      url: https://test.devju.ga
-      icon: card-icon/test.svg
-      desc: Test Domain
+    - title: cicd.devju.ga
+      url: https://cicd.devju.ga
+      icon: card-icon/jenkins.svg
+      desc: Jenkins
   
     - title: mon.devju.ga
       url: https://mon.devju.ga
       icon: card-icon/grafana.svg
       desc: Grafana
+
+    - title: test.devju.ga
+      url: https://test.devju.ga
+      icon: card-icon/test.svg
+      desc: Test Domain
